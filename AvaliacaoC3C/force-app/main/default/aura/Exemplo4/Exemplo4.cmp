@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global">
+
+    <aura:attribute name="pao" type="String" />
+    <aura:attribute name="frios" type="String" />
+    <aura:attribute name="bolacha" type="String" />
+    <aura:attribute name="bolo" type="String" />
+    <aura:attribute name="numeroDoCliente" type="String" />
+    <aura:attribute name="emailDoProprietario" type="String" />
+
+    <lightning:input type="text" value="{!v.frios}" label="Frios:" required="true" />
+    <lightning:input type="text" value="{!v.bolacha}" label="Bolacha:" required="true" />
+    <lightning:input type="text" value="{!v.bolo}" label="Bolo:" required="true" />
+    <lightning:input type="text" value="{!v.numeroDoCliente}" label="Numero:" required="true" />
+    <lightning:input type="email" value="{!v.emailDoProprietario}" label="Email:" required="true" />
+
+    <lightning:select name="pao" value="{!v.pao}" label="Qual o tipo do pão?" required="true">
+        <option value="">choose one...</option>
+        <option value="1">Frances</option>
+        <option value="2">Bolachao</option>
+        <option value="3">Seda</option>
+    </lightning:select>
+
+    <lightning:button label="Criar Padaria" onclick="{!c.chamarHelper}" />
+</aura:component>

@@ -1,0 +1,23 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global"
+    controller="AtualizarRegistroApex">
+
+    <aura:attribute name="id" type="Id" />
+    <aura:attribute name="name" type="String" />
+    <aura:attribute name="phone" type="String" />
+    <aura:attribute name="description" type="String" />
+    <aura:attribute type="List" name="contas" />
+    <aura:attribute type="List" name="columns" />
+
+    <aura:handler name="init" value="{! this}" action="{! c.init}" />
+
+    <div style="height: 300px">
+        <lightning:datatable columns="{! v.columns }" data="{! v.contas }" keyField="id" hideCheckboxColumn="true" />
+    </div><br />
+
+    <lightning:input type="Id" value="{!v.id}" label="Id:" required="true" />
+    <lightning:input type="text" value="{!v.name}" label="Nome:" required="false" />
+    <lightning:input type="text" value="{!v.phone}" label="Telefone:" required="false" />
+    <lightning:input type="text" value="{!v.description}" label="Descrição:" required="false" />
+    <lightning:button label="Atualizar" onclick="{! c.enviarController}" />
+
+</aura:component>
